@@ -1,5 +1,4 @@
 import useSWR from "swr";
-import { apiUri } from '@/utils';
 
 type User = {
   id: string;
@@ -12,7 +11,7 @@ async function fetcher(key: string) {
 }
 
 export const useGetUser = (id: string) => {
-  const { data, error, isLoading } = useSWR(`${apiUri}/users/${id}`, fetcher);
+  const { data, error, isLoading } = useSWR(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/users/${id}`, fetcher);
 
   return {
     user: data,
