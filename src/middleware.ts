@@ -11,8 +11,8 @@ export function middleware(req: NextRequest) {
   const basicAuth = req.headers.get('authorization');
 
   // envに指定したnameとpassword格納
-  const USER_NAME = process.env.USER_NAME;
-  const USER_PASSWORD = process.env.USER_PASSWORD;
+  const USER_NAME = process.env.NEXT_PUBLIC_USER_NAME;
+  const USER_PASSWORD = process.env.NEXT_PUBLIC_USER_PASSWORD;
   
   if(basicAuth) {
     const auth = basicAuth.split(' ')[1];
