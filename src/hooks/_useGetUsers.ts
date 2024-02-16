@@ -4,7 +4,6 @@ type Users = {
   id: string;
   name: string;
   email: string;
-  description: string;
 }
 
 async function fetcher(key: string) {
@@ -13,8 +12,7 @@ async function fetcher(key: string) {
 
 
 export const useGetUsers = () => {
-  // const { data, error, isLoading } = useSWR(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/users`, fetcher);
-  const { data, error, isLoading } = useSWR(`/api/users`, fetcher);
+  const { data, error, isLoading } = useSWR(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/users`, fetcher);
   
   return {
     users: data,

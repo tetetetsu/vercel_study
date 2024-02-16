@@ -8,7 +8,6 @@ const HeaderComponent = () => {
   // const goToPage = () => {
   //   router.push("/company")
   // }
-  console.log("header")
   return (
     <header>
       <div className="inner flex justify-between p-5 border-b border-black mb-5">
