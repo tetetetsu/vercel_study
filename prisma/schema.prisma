@@ -11,13 +11,12 @@ datasource db {
   provider          = "postgresql"
   url               = env("POSTGRES_PRISMA_URL")
   directUrl         = env("POSTGRES_URL_NON_POOLING")
-  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING") 
 }
 
 // モデルの定義
 model User {
   id    Int    @id @default(autoincrement())
   name  String @db.VarChar(255)
-  mail  String @unique @db.VarChar(255)
+  mail  String @db.VarChar(255)
   description String @db.VarChar(1000)
 }

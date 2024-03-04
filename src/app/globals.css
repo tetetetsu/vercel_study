@@ -25,3 +25,24 @@ body {
     )
     rgb(var(--background-start-rgb)); */
 }
+
+input {
+  padding: 5px;
+  border: 1px solid #efefef;
+}
+
+dl {
+  align-items: center;
+  gap: 10px;
+}
+dt {
+  width: 100px;
+}
+button {
+  background: blue;
+  color: #fff;
+  padding: 5px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+
+}

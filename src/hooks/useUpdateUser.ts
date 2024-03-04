@@ -1,24 +1,24 @@
 import axios from "axios";
 import { useState } from "react";
 
-type User = {
+type UserFormData = {
   name: string;
   mail: string;
   description: string;
 }
 
 
-export const useCreateUser = () => {
+export const useUpdateUser = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
-  const createUser = async (formData: User) => {
+  const updateUser = async (userId: string, formData: UserFormData) => {
     setIsLoading(true);
     setError(null);
     
     try {
-      const response = await fetch(`/api/user/create`, {
-        method: 'POST',
+      const response = await fetch(`/api/user/update/${userId}`, {
+        method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -42,7 +42,7 @@ export const useCreateUser = () => {
   }
   
   return {
-    createUser,
+    updateUser,
     isLoading,
     isError: error,
   }

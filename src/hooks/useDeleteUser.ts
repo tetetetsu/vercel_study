@@ -1,34 +1,26 @@
 import axios from "axios";
 import { useState } from "react";
 
-type User = {
-  name: string;
-  mail: string;
-  description: string;
-}
-
-
-export const useCreateUser = () => {
+export const useDeleteUser = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
-  const createUser = async (formData: User) => {
+  const deleteUser = async (userId: string) => {
     setIsLoading(true);
     setError(null);
     
     try {
-      const response = await fetch(`/api/user/create`, {
-        method: 'POST',
+      const response = await fetch(`/api/user/delete/${userId}`, {
+        method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
       });
   
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      
+  
       const data = await response.json();
 
       return ({data: data, message: "Success!"});
@@ -42,7 +34,7 @@ export const useCreateUser = () => {
   }
   
   return {
-    createUser,
+    deleteUser,
     isLoading,
     isError: error,
   }

@@ -23,9 +23,10 @@ const HeaderComponent = () => {
             About with query
           </Link>
           <Link href="/users">Users</Link>
-          <Link href="/articles/1">article</Link>
+          <Link href="/users/create">Create</Link>
+          {/* <Link href="/articles/1">article</Link>
           <Link href="/posts/hgoe">posts</Link>
-          <Link href="/posts/fuga">posts</Link>
+          <Link href="/posts/fuga">posts</Link> */}
           {/* <button onClick={goToPage}>Company page</button> */}
         </nav>
       </div>

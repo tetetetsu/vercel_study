@@ -3,7 +3,8 @@ import useSWR from "swr";
 type User = {
   id: string;
   name: string;
-  email: string;
+  mail: string;
+  description: string;
 }
 
 async function fetcher(key: string) {
@@ -11,7 +12,7 @@ async function fetcher(key: string) {
 }
 
 export const useGetUser = (id: string) => {
-  const { data, error, isLoading } = useSWR(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/users/${id}`, fetcher);
+  const { data, error, isLoading } = useSWR(`/api/user/${id}`, fetcher);
 
   return {
     user: data,
