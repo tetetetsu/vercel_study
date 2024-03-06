@@ -20,7 +20,6 @@ const DeleteButton = styled.button`
 `;
 
 export default function Index() {
-  const [refreshKey, setRefreshKey] = useState(0);
   const { users, isLoading, isError } = useGetUsers();
   const { deleteUser, isLoading: isLoadingDelete, isError: isErrorDelete } = useDeleteUser();
 
