@@ -8,7 +8,6 @@ export const useDeleteUser = () => {
   const deleteUser = async (userId: string) => {
     setIsLoading(true);
     setError(null);
-    
     try {
       const response = await fetch(`/api/user/delete/${userId}`, {
         method: 'DELETE',

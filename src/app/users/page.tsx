@@ -1,3 +1,4 @@
+"use client";
 import PageTitle from "@/app/components/title/pageTitle";
 import { useDeleteUser } from "@/hooks/useDeleteUser";
 import { useGetUsers } from "@/hooks/useGetUsers";
@@ -24,8 +25,6 @@ export default function Index() {
   const { users, isLoading, isError } = useGetUsers();
   const { deleteUser, isLoading: isLoadingDelete, isError: isErrorDelete } = useDeleteUser();
 
-
-  
 
   const handleDelete = useCallback(async(userId:any, e:React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();

@@ -11,7 +11,7 @@ async function fetcher(key: string) {
   return fetch(key).then((res) => res.json() as Promise<User | null>);
 }
 
-export const useGetUser = (id: string) => {
+export const useGetUser = (id: any) => {
   const { data, error, isLoading } = useSWR(`/api/user/${id}`, fetcher);
 
   return {

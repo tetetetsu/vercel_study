@@ -1,7 +1,6 @@
-import Layout from "@/app/components/layouts/layout";
+"use client";
+
 import Image from "next/image";
-import { useCreateUser } from '../hooks/useCreateUser';
-import { useState } from "react";
 
 export default function Index() {
   return (

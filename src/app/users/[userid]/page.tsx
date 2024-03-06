@@ -1,12 +1,14 @@
-import { useRouter } from 'next/router';
+'use client';
+import { useParams, useRouter } from 'next/navigation';
 import { useGetUser } from "@/hooks/useGetUser";
 import { useCallback, useEffect, useState } from 'react';
 import PageTitle from '@/app/components/title/pageTitle';
 import Link from 'next/link';
 
-export default function User() {
+export default function index() {
   const router = useRouter();
-  const userId = typeof router.query.userid === 'string' ? router.query.userid : '';
+  const params = useParams();
+  const userId = params.userid ? params.userid : '';
   const { user, isLoading, isError } =  useGetUser(userId);
 
   const handleEdit = useCallback(() => {

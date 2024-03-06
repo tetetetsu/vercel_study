@@ -1,6 +1,7 @@
+"use client";
 import PageTitle from '@/app/components/title/pageTitle';
-import { useCreateUser } from '../../hooks/useCreateUser';
-import { useRouter } from 'next/router';
+import { useCreateUser } from '@/hooks/useCreateUser';
+import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useState } from "react";
 
 export default function CreateUser() {

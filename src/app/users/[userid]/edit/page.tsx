@@ -1,4 +1,5 @@
-import { useRouter } from 'next/router';
+'use client';
+import { useParams, useRouter } from 'next/navigation';
 import { useGetUser } from "@/hooks/useGetUser";
 import { useUpdateUser } from "@/hooks/useUpdateUser";
 import { useCallback, useEffect, useState } from 'react';
@@ -6,7 +7,8 @@ import PageTitle from '@/app/components/title/pageTitle';
 
 export default function EditUser() {
   const router = useRouter();
-  const userId = typeof router.query.userid === 'string' ? router.query.userid : '';
+  const params = useParams();
+  const userId = params.userid ? params.userid : '';
   const { user, isLoading: isLoadingUser, isError: isErrorUser } =  useGetUser(userId);
   const { updateUser, isLoading: isLoadingUpdateUser, isError: isErrorUpdateUser } =  useUpdateUser();
   const [userInfo, setUserInfo] = useState({
